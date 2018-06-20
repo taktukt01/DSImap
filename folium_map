@@ -1,11 +1,11 @@
-
 import folium
-
-
 
 center = [19.016384, -71.740996]
 dajabon = [19.566667, -71.71]
+santo_domingo = [18.483402, -69.929611]
+pedernales = [18.039585, -71.741486]
 
+ounaminthe = [19.5493393,-71.7247467]
 
 map= folium.Map(location = center, zoom_start = 8 , tiles = 'Stamen Terrain')
 
@@ -13,12 +13,36 @@ map= folium.Map(location = center, zoom_start = 8 , tiles = 'Stamen Terrain')
 #trade site names: 1) Dajabon  2) Pedernales 3)
 
 #Marker
-tooltip = 'Click me'
 
-folium.Marker(dajabon,
+
+
+
+folium.Marker(dajabon, 
 popup="""Dajabón is the capital city of the Dajabón province in the Dominican Republic,located on the border with Haiti. 
               It is a market town with a population
 of about 40,000 north of the Cordillera Central mountain range.""",
               # this line is copied and pasted off of wikipedia. need to tweak it later. Right now it is for demonstration only
     icon=folium.Icon(icon='info-sign', color = 'red')).add_to(map)
+
+
+
+folium.Marker(santo_domingo,
+              popup='Santo Domingo is the capital of Dominican Republic. '  ,
+              icon=folium.Icon(color='red',icon='info-sign')
+              ).add_to(map)
+
+
+folium.Marker(pedernales,
+              popup=""""Pedernales is a small city and the capital of the same name province,
+              located in southern Dominican Republic.
+              It is a wonderful coastal city with the number of residents close to 30,000 people """ ,
+              icon=folium.Icon(color='red',icon='info-sign')
+              ).add_to(map)
+
+
+folium.Marker(ounaminthe, 
+popup='Ounaminthe is the border town of Haiti',
+              # this line is copied and pasted off of wikipedia. need to tweak it later. Right now it is for demonstration only
+    icon=folium.Icon(icon='info-sign', color = 'blue')).add_to(map)
+
 map
