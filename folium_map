@@ -1,1 +1,24 @@
 
+import folium
+
+
+
+center = [19.016384, -71.740996]
+dajabon = [19.566667, -71.71]
+
+
+map= folium.Map(location = center, zoom_start = 8 , tiles = 'Stamen Terrain')
+
+
+#trade site names: 1) Dajabon  2) Pedernales 3)
+
+#Marker
+tooltip = 'Click me'
+
+folium.Marker(dajabon,
+popup="""Dajabón is the capital city of the Dajabón province in the Dominican Republic,located on the border with Haiti. 
+              It is a market town with a population
+of about 40,000 north of the Cordillera Central mountain range.""",
+              # this line is copied and pasted off of wikipedia. need to tweak it later. Right now it is for demonstration only
+    icon=folium.Icon(icon='info-sign', color = 'red')).add_to(map)
+map
