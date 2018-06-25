@@ -8,7 +8,7 @@ jimani = [18.4916897, -71.8502197]
 ounaminthe = [19.5493393,-71.7247467]
 anse_a_pitres = [18.05, -71.75]
 santiago = [19.4517, -70.69703]
-
+monte_cristi = [19.8482609, -71.6459732]
 map= folium.Map(location = center, zoom_start = 8 , tiles = 'Stamen Terrain')
 
 
@@ -67,6 +67,11 @@ folium.Marker(anse_a_pitres,
               icon=folium.Icon(color='red',icon='info-sign')
               ).add_to(map)
 
+
+folium.Marker(monte_cristi,
+              popup="""A brief description about Monte-Cristi""" ,
+              icon=folium.Icon(color='red',icon='info-sign')
+              ).add_to(map)
 
 
 
