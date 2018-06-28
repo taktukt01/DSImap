@@ -1,6 +1,8 @@
 import folium
 from folium.plugins import FloatImage
 from folium import plugins
+from folium.features import CustomIcon
+
 
 center = [19.016384, -71.740996]
 dajabon = [19.566667, -71.71]
@@ -11,7 +13,7 @@ ounaminthe = [19.5493393,-71.7247467]
 anse_a_pitres = [18.05, -71.75]
 santiago = [19.4517, -70.69703]
 monte_cristi = [19.8482609, -71.6459732]
-map= folium.Map(location = center, zoom_start = 8 , tiles = 'Stamen Terrain')
+map= folium.Map(location = center, zoom_start = 8 , tiles = 'OpenStreetMap')
 
 
 #trade site names: 1) Dajabon  2) Pedernales 3)
@@ -105,6 +107,7 @@ plugins.Fullscreen(
     position='topright',
     title='Click me!',
     title_cancel='Exit me',
-    force_separate_button=True).add_to(map)
+    force_separate_button=False).add_to(map)
+
 
 map
