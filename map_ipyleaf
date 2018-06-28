@@ -1,4 +1,6 @@
 import folium
+from folium.plugins import FloatImage
+from folium import plugins
 
 center = [19.016384, -71.740996]
 dajabon = [19.566667, -71.71]
@@ -30,7 +32,7 @@ Date when border changed:             """,
 
 
 folium.Marker(santo_domingo,
-              popup= """"Description: Santo Domingo is the capital of the Dominican Republic. 
+              popup= """Description: Santo Domingo is the capital of the Dominican Republic. 
               It is situated on the southeast coast of the island of Hispaniola, at the mouth of the Ozama River, 
               and is the oldest permanent city established by Europeans in the Western Hemisphere. 
               The city is also the seat of the oldest Roman Catholic archbishopric in the Americas. 
@@ -42,16 +44,16 @@ folium.Marker(santo_domingo,
 
 
 folium.Marker(santiago,
-              popup=""""Description: Santiago is one of the most populous cities in DR with the population exceeding 0.5 million people. It is located in the
+              popup="""Description: Santiago is one of the most populous cities in DR with the population exceeding 0.5 million people. It is located in the
               northern part of the country and is a key economic, transportation,
               education and cultural center of Dominicana 
-              Date when border changed:             """  ,
+              Date when border changed:         """  ,
               icon=folium.Icon(color='red',icon='info-sign')
               ).add_to(map)
 
 
 folium.Marker(pedernales,
-              popup=""""Description: Pedernales is a small city and the capital of the same name province,
+              popup="""Description: Pedernales is a small city and the capital of the same name province,
               located in southern Dominican Republic.
               It is a wonderful coastal city with the number of residents close to 30,000 people 
               Date when border changed:             """ ,
@@ -60,7 +62,7 @@ folium.Marker(pedernales,
 
 
 folium.Marker(ounaminthe, 
-popup=""""Description: Ouanaminthe is a town located in the Nord-Est department of Haiti. It lies along the Massacre River, which forms part of the natural border between Haiti and D.R.
+popup="""Description: Ouanaminthe is a town located in the Nord-Est department of Haiti. It lies along the Massacre River, which forms part of the natural border between Haiti and D.R.
 The population stands at roughly 100,000 people.
 Haitians living in Ouanaminthe are allowed to cross the border freely without documents two days per week,
 mainly for the market on Mondays and Fridays at Dajabón, where they buy and sell goods. 
@@ -75,7 +77,6 @@ It is situated in a hilly region between the western shore of Lake Enriquillo an
 The city is a trade centre for the coffee, fruits, and timber produced in the region.
 This is also a checkpoint where many Haitians crossed over to after the earthquake in 2010.
 Date when border changed:             """,
-              # this line is copied and pasted off of wikipedia. need to tweak it later. Right now it is for demonstration only
     icon=folium.Icon(icon='info-sign', color = 'red')).add_to(map)
 
 
@@ -96,7 +97,14 @@ Date when border changed:             """ ,
               icon=folium.Icon(color='red',icon='info-sign')
               ).add_to(map)
 
+url = ('https://raw.githubusercontent.com/SECOORA/static_assets/'
+       'master/maps/img/rose.png')
+FloatImage(url, bottom=64, left=75).add_to(map)
 
-
+plugins.Fullscreen(
+    position='topright',
+    title='Click me!',
+    title_cancel='Exit me',
+    force_separate_button=True).add_to(map)
 
 map
